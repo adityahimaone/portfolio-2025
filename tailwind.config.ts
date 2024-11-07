@@ -97,11 +97,21 @@ const config = {
         gradient: {
           to: { 'background-position': '200% center' },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+        'infinite-scroll-ltr': {
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         gradient: 'gradient 8s linear infinite',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'infinite-scroll-ltr': 'infinite-scroll-ltr 25s linear infinite',
       },
     },
   },
@@ -148,3 +158,4 @@ function addVariablesForColors({ addBase, theme }: any) {
     ':root': newVars,
   });
 }
+

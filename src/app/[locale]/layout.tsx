@@ -76,11 +76,8 @@ export default function RootLayout({
           <PageTransitionEffect>
             <Theme>
               <Inner>
-                <div className="relative w-full bg-background-2 bg-dot-black/[0.2] dark:bg-dot-white/[0.2]">
-                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-                  <div className="relative z-50">{children}</div>
-                  <Footer />
-                </div>
+                {children}
+                <Footer />
               </Inner>
             </Theme>
           </PageTransitionEffect>
