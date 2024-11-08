@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white font-sans dark:bg-background-2"
       ref={containerRef}
     >
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 py-20">
         <motion.h2
           className="flex items-baseline py-10 text-2xl lg:text-4xl"
           variants={{

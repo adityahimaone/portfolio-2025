@@ -342,11 +342,11 @@ const Page = ({ params: { locale } }: Props) => {
           <div className="container relative flex h-[90vh] flex-col py-[70px]">
             <div
               ref={refSectionHero}
-              className="flex h-full flex-row items-center justify-start xl:items-end"
+              className="flex h-full flex-row items-end justify-start"
             >
               <div className="flex flex-col pb-20">
                 {/* link resume */}
-                <div className="rounded-[12px]text-xl z-10 w-fit">
+                <div className="rounded-[12px]text-xl z-10 mb-5 w-fit">
                   <Cursor
                     attachToParent
                     variants={{
@@ -384,13 +384,13 @@ const Page = ({ params: { locale } }: Props) => {
                       },
                     }}
                   >
-                    <button className="group relative inline-flex h-[calc(48px+8px)] cursor-none items-center justify-center rounded-full bg-neutral-800 py-1  pl-6 pr-14 font-medium text-neutral-50">
-                      <span className="z-10 pr-2 group-hover:text-slate-700">
+                    <button className="group relative inline-flex h-[calc(38px+4px)] cursor-none items-center justify-center rounded-full bg-neutral-800 py-1 pl-6 pr-10 font-medium text-neutral-50 lg:h-[calc(48px+8px)] lg:pr-14">
+                      <span className="z-10 pr-2 text-sm group-hover:text-slate-700 lg:text-base">
                         RESUME
                       </span>
-                      <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-secondary transition-[width] group-hover:w-[calc(100%-8px)]">
-                        <div className="mr-3 flex items-center justify-center">
-                          <ArrowRight className="h-6 w-6 text-neutral-50 group-hover:text-slate-700" />
+                      <div className="absolute right-1 inline-flex h-9 w-9 items-center justify-end rounded-full bg-secondary transition-[width] group-hover:w-[calc(100%-8px)] lg:h-12 lg:w-12">
+                        <div className="mr-2 flex items-center justify-center lg:mr-3">
+                          <ArrowRight className="h-5 w-5 text-neutral-50 group-hover:text-slate-700 lg:h-6 lg:w-6" />
                         </div>
                       </div>
                     </button>
@@ -401,7 +401,7 @@ const Page = ({ params: { locale } }: Props) => {
                   per="char"
                   preset="fade"
                   as="h1"
-                  className="text-7xl leading-none xl:text-[180px]"
+                  className="text-7xl leading-none md:text-8xl lg:text-9xl xl:text-[180px]"
                   trigger={isInViewSectionHero}
                 >
                   Code
@@ -411,7 +411,7 @@ const Page = ({ params: { locale } }: Props) => {
                     per="char"
                     preset="slide"
                     as="h1"
-                    className="text-7xl text-secondary xl:text-[180px]"
+                    className="text-7xl text-secondary md:text-8xl lg:text-9xl xl:text-[180px]"
                     trigger={isInViewSectionHero}
                     delay={0.3}
                   >
@@ -634,7 +634,7 @@ development.`}
               }}
               animate={isInViewSectionWorks ? 'show' : 'hidden'}
             >
-              SKILLS
+              WORKS
               <AudioLines className="ml-2 h-6 w-6 text-secondary" />
             </motion.h2>
             <motion.div
@@ -663,7 +663,7 @@ development.`}
                       opacity: 1,
                       transition: {
                         type: 'spring',
-                        duration: 0.8 * index,
+                        duration: 1 * index,
                       },
                     },
                   }}

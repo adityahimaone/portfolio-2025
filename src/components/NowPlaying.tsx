@@ -48,12 +48,13 @@ const NowPlaying = () => {
   }
 
   return (
-    <div className="relative w-72 rounded-lg bg-secondary drop-shadow-xl">
+    <div className="relative w-72 overflow-clip rounded-lg bg-secondary drop-shadow-xl">
       <div className="p-4">
         <div className="flex flex-col">
           <motion.div
             className="relative h-full w-full overflow-hidden rounded-md"
             whileHover="hover"
+            whileTap="hover"
             initial="initial"
           >
             <motion.div
