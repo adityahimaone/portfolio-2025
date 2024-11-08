@@ -7,6 +7,7 @@ import PageTransitionEffect from './pageTransitionEffect';
 import Footer from '@/components/Footer';
 import Inner from '@/components/layouts/inner';
 import { poppins } from '@/lib/fonts';
+import { AnimatedTabs } from '@/components/AnimatedTabs';
 
 export const metadata: Metadata = {
   title: 'adit — frontend developer',
@@ -76,6 +77,7 @@ export default function RootLayout({
           <PageTransitionEffect>
             <Theme>
               <Inner>
+                <AnimatedTabs />
                 {children}
                 <Footer />
               </Inner>

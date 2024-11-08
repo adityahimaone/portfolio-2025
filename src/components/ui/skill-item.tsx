@@ -5,10 +5,11 @@ interface SkillItemProps {
   category: string;
   skills: string;
   imgSrc: string;
+  index: number;
 }
 
-const SkillItem = ({ category, skills, imgSrc }: SkillItemProps) => {
-  const ref = useRef<HTMLLIElement | null>(null);
+const SkillItem = ({ category, skills, imgSrc, index }: SkillItemProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -18,7 +19,7 @@ const SkillItem = ({ category, skills, imgSrc }: SkillItemProps) => {
   const top = useTransform(mouseYSpring, [0.5, -0.5], ['40%', '60%']);
   const left = useTransform(mouseXSpring, [0.5, -0.5], ['60%', '70%']);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = ref.current!.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -31,25 +32,12 @@ const SkillItem = ({ category, skills, imgSrc }: SkillItemProps) => {
   };
 
   return (
-    <motion.li
+    <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"
-      variants={{
-        hidden: {
-          opacity: 0,
-          y: 20,
-        },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: 'spring',
-            duration: 0.8,
-          },
-        },
-      }}
+      whileTap="whileHover"
       className="relative flex-col"
     >
       <div className="flex flex-col items-center justify-center py-8 lg:flex-row lg:items-center lg:justify-between">
@@ -76,24 +64,25 @@ const SkillItem = ({ category, skills, imgSrc }: SkillItemProps) => {
       </div>
       <motion.div
         className="h-[1px] bg-neutral-200 dark:bg-neutral-700"
+        custom={index}
         variants={{
           hidden: {
             width: '0%',
             x: 0,
           },
-          show: {
+          show: (index) => ({
             width: '100%',
             x: 0,
             transition: {
               type: 'spring',
               duration: 5,
               bounce: 0.2,
-              delay: 0.2, // Delay after parent animation
+              delay: index * 3 + 0.2,
             },
-          },
+          }),
         }}
       ></motion.div>
-    </motion.li>
+    </motion.div>
   );
 };
 

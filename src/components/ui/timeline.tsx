@@ -7,6 +7,7 @@ import {
 } from 'framer-motion';
 import { AudioLines } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
+import { InView } from '../motion-ui/in-view';
 
 interface TimelineEntry {
   title: string | React.ReactNode;
@@ -39,26 +40,26 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="mx-auto max-w-7xl px-4 py-20">
-        <motion.h2
-          className="flex items-baseline py-10 text-2xl lg:text-4xl"
+        <InView
           variants={{
-            hidden: { opacity: 0, y: 20 },
-            show: {
+            hidden: {
+              opacity: 0,
+              y: 100,
+            },
+            visible: {
               opacity: 1,
               y: 0,
-              transition: {
-                delay: 0.5,
-              },
             },
           }}
-          initial="hidden"
-          animate="show"
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          viewOptions={{ margin: '0px 0px -150px 0px' }}
         >
-          TIMELINE EXPERIENCES
-          <AudioLines className="ml-2 h-6 w-6 flex-none text-secondary" />
-        </motion.h2>
+          <h2 className="flex items-baseline py-10 text-2xl lg:text-4xl">
+            TIMELINE EXPERIENCES
+            <AudioLines className="ml-2 h-6 w-6 flex-none text-secondary" />
+          </h2>
+        </InView>
       </div>
-
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
           <div
@@ -73,7 +74,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 {item.title}
               </h3>
             </div>
-            <div className="relative w-full pl-20 pr-4 md:pl-4">
+            <div className="relative w-full pl-20 md:pl-4 md:pr-4">
               <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 dark:text-neutral-500 md:hidden">
                 {item.title}
               </h3>
