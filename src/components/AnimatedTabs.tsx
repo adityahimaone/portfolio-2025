@@ -22,6 +22,11 @@ export function AnimatedTabs() {
       href: '#about',
     },
     {
+      label: 'skills',
+      icon: <FaTimeline className="h-5 w-5" />,
+      href: '#skills',
+    },
+    {
       label: 'timeline',
       icon: <FaTimeline className="h-5 w-5" />,
       href: '#experience',
@@ -56,12 +61,12 @@ export function AnimatedTabs() {
 
   return (
     <motion.div
-      className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-50"
       initial={{ y: '100%' }}
       animate={{ y: showTabs ? -10 : '100%' }}
       transition={{ type: 'spring', bounce: 0.2, duration: 0.3 }}
     >
-      <div className="flex justify-center">
+      <div className="flex justify-center md:hidden">
         <div className="flex w-fit space-x-2 rounded-xl border border-zinc-950/10 bg-neutral-900 p-2">
           <AnimatedBackground
             defaultValue={TABS[0].label}

@@ -54,6 +54,15 @@ export const experienceData: IExperienceData[] = [
 export const projectsData: IProjectData[] = [
   {
     id: 1,
+    title: 'Portfolio Bento',
+    description:
+      'Landing page for SeaPhantom, an NFT project focusing on innovative and sustainable technologies. Explore the world of NFTs and peer-to-peer trading on the SeaPhantom platform.',
+    image:
+      'https://res.cloudinary.com/deselamak/image/upload/v1731132621/portofolio/rjwnyaeifqmneuflt3it.png',
+    url: 'https://seaphantom.com',
+  },
+  {
+    id: 2,
     title: 'SeaPhantom Landing Page',
     description:
       'Landing page for SeaPhantom, an NFT project focusing on innovative and sustainable technologies. Explore the world of NFTs and peer-to-peer trading on the SeaPhantom platform.',
@@ -62,7 +71,7 @@ export const projectsData: IProjectData[] = [
     url: 'https://seaphantom.com',
   },
   {
-    id: 2,
+    id: 3,
     title: 'SeaPhantom P2P Rum Token Escrow Trading',
     description:
       'Engage in NFT trading with the P2P Rum Token Escrow Trading project. This platform facilitates secure and transparent NFT transactions.',
@@ -71,22 +80,13 @@ export const projectsData: IProjectData[] = [
     url: 'https://auth.seaphantom.com/',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Labgrownbeasts Company Profile',
     description:
       'Explore the Labgrownbeasts Company Profile, showcasing innovation and excellence in the field. Learn about our vision, mission, and the cutting-edge work we do.',
     image:
       'https://res.cloudinary.com/deselamak/image/upload/v1699777135/portofolio/mqprcb6todunicq4cg0a.webp',
     url: 'https://labgrownbeasts.com/',
-  },
-  {
-    id: 4,
-    title: 'Daily Calories Tracker Application',
-    description:
-      'Application for tracking and counting daily calorie intake, including meal plans. Integrates with Open API for comprehensive nutritional insights.',
-    image:
-      'https://ucarecdn.com/26d0d2ab-f0d4-453f-a71c-b395c744f7b0/dailycalories.png',
-    url: 'https://github.com/adityahimaone/Daily-Calorie-Apps',
   },
 ];
 
