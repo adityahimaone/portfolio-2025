@@ -22,6 +22,9 @@ import { Cursor } from '@/components/motion-ui/cursor';
 import { ArrowRight, AudioLines, Music2, Music3, Music4 } from 'lucide-react';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import SkillItem from '@/components/ui/skill-item';
+import { InView } from '@/components/motion-ui/in-view';
+import { TextScramble } from '@/components/motion-ui/text-scramble';
+import { useMobileViewport } from '@/lib/utils';
 
 interface Props {
   params: {
@@ -31,6 +34,8 @@ interface Props {
 
 const Page = ({ params: { locale } }: Props) => {
   const t = useTranslations('projects');
+
+  const isMobile = useMobileViewport();
 
   const refSectionHero = useRef<HTMLDivElement>(null);
   const refSectionAbout = useRef<HTMLDivElement>(null);
@@ -110,9 +115,11 @@ const Page = ({ params: { locale } }: Props) => {
       title: 'APR 2024 - SEP 2024',
       content: (
         <div>
-          <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
+          <h3 className="mb-1 text-2xl font-medium text-neutral-800 dark:text-neutral-200">
             Frontend Developer{' '}
-            <span className="text-lg text-neutral-400">Part Time</span>
+            <span className="text-base font-light text-neutral-400 md:text-lg">
+              Part Time
+            </span>
           </h3>
           <p className="mb-3 text-lg text-secondary">
             80&Company - Kyoto, Japan
@@ -166,20 +173,20 @@ const Page = ({ params: { locale } }: Props) => {
               interface and ensure a seamless user experience.
             </li>
           </ul>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <Image
               src="https://assets.aceternity.com/pro/hero-sections.png"
               alt="hero template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-40  w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <Image
               src="https://assets.aceternity.com/features-section.png"
               alt="feature template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-40  w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -303,6 +310,39 @@ const Page = ({ params: { locale } }: Props) => {
     },
   ];
 
+  const dataSkills = [
+    {
+      category: 'Languages',
+      skills: 'HTML • CSS • JavaScript • TypeScript • Go • Swift',
+      imgSrc:
+        'https://i.gifer.com/origin/2b/2b604178397000ee589a86d3e9e10b5a_w200.gif',
+    },
+    {
+      category: 'Frameworks',
+      skills: 'React • Next • Remix • TailwindCSS',
+      imgSrc:
+        'https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg',
+    },
+    {
+      category: 'Animations',
+      skills: 'Framer Motion • Lottie • GSAP',
+      imgSrc:
+        'https://camo.githubusercontent.com/02bc2b08d9850c146f2d8e6f09dc971bce7f65dcfc45fa87f9d9e8c244bac28e/68747470733a2f2f6672616d657275736572636f6e74656e742e636f6d2f696d616765732f704d534f6d47503256387353615a525632443769344854425465342e706e67',
+    },
+    {
+      category: 'Design & Tools',
+      skills: 'Figma • VSCode • Git',
+      imgSrc:
+        'https://cdn.sanity.io/images/599r6htc/regionalized/9cd9e0e6b2c322b439633e76e1b7e6fd6c340824-1920x1080.png?rect=0,1,1920,1079&w=804&h=452&q=75&fit=max&auto=format',
+    },
+    {
+      category: 'Project Management',
+      skills: 'Trello • Taiga',
+      imgSrc:
+        'https://images.ctfassets.net/rz1oowkt5gyp/4kCNudjaBYj90CGgG7Lict/cbafa67336b2007278f50d99ceabfb22/Boards_2x.png?w=540',
+    },
+  ];
+
   const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
     return (
       <svg
@@ -331,6 +371,8 @@ const Page = ({ params: { locale } }: Props) => {
       </svg>
     );
   };
+
+  const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=adityahimaone@gmail.com&su=${encodeURIComponent('Collaboration Opportunity')}&body=${encodeURIComponent("Hi Aditya,\n\nI'm reaching out because I'm interested in collaborating with you. I'd love to discuss potential opportunities to work together.\n\nLooking forward to hearing from you.\n\nBest regards,")}`;
 
   return (
     <main className="py-3">
@@ -401,7 +443,7 @@ const Page = ({ params: { locale } }: Props) => {
                   per="char"
                   preset="fade"
                   as="h1"
-                  className="text-7xl leading-none md:text-8xl lg:text-9xl xl:text-[180px]"
+                  className="font-unbounded text-4xl capitalize leading-none md:text-7xl lg:text-8xl xl:text-[165px]"
                   trigger={isInViewSectionHero}
                 >
                   Code
@@ -411,7 +453,7 @@ const Page = ({ params: { locale } }: Props) => {
                     per="char"
                     preset="slide"
                     as="h1"
-                    className="text-7xl text-secondary md:text-8xl lg:text-9xl xl:text-[180px]"
+                    className="font-unbounded text-4xl capitalize text-secondary md:text-7xl lg:text-8xl xl:text-[165px]"
                     trigger={isInViewSectionHero}
                     delay={0.3}
                   >
@@ -420,7 +462,7 @@ const Page = ({ params: { locale } }: Props) => {
                   <TextEffect
                     per="char"
                     preset="fade"
-                    className="text-7xl text-secondary xl:text-[180px]"
+                    className="font-unbounded text-4xl text-secondary md:text-7xl lg:text-8xl xl:text-[165px]"
                     trigger={isInViewSectionHero}
                     delay={0.8}
                     variants={{
@@ -444,17 +486,19 @@ const Page = ({ params: { locale } }: Props) => {
             </div>
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 flex-none bg-secondary" />
-              JKT, IND
+              <TextScramble trigger={isInViewSectionHero} duration={2}>
+                JKT, IND
+              </TextScramble>
             </div>
-            <div className="absolute right-24 top-24 xl:right-10">
+            <div className="absolute right-12 top-10 transition-all md:top-24 xl:right-10">
               <SpinningText
-                radius={5}
-                fontSize={1.2}
+                radius={isMobile ? 5 : 6}
+                fontSize={isMobile ? 0.8 : 1.2}
                 className="font-medium leading-none"
               >
                 {`frontend • dynamic-ui • pixel-perfect • `}
               </SpinningText>
-              <Music4 className="-mt-5 h-10 w-10 text-white" />
+              <Music4 className="-mt-3 h-7 w-7 text-white md:-mt-5 md:h-10 md:w-10" />
             </div>
             <div className="">
               <div className="absolute -bottom-10 -left-[50%] z-10 inline-flex h-20 w-[200%] flex-nowrap overflow-hidden bg-[#222222] shadow-lg">
@@ -504,18 +548,23 @@ const Page = ({ params: { locale } }: Props) => {
       </div>
       <section
         id="about"
-        className="container mb-32 mt-60 flex h-full flex-col gap-5 lg:flex-row lg:items-center  lg:justify-between"
+        className="container mb-32 mt-60 flex h-full flex-col gap-8 overflow-hidden lg:flex-row lg:items-center lg:justify-between"
       >
         <div
           ref={refSectionAbout}
-          className="mx-auto flex max-w-screen-lg flex-col items-start justify-center"
+          className="mx-auto flex max-w-screen-2xl flex-col items-start justify-center"
         >
-          <p className="mb-5 bg-[#222222] p-3 text-lg">@adityahimaone</p>
+          <TextScramble
+            className="mb-5 bg-[#222222] p-3 text-lg"
+            trigger={isInViewSectionAbout}
+            duration={1}
+          >
+            @adityahimaone
+          </TextScramble>
           <TextEffect
             per="line"
             as="p"
-            className="text-3xl leading-relaxed"
-            segmentWrapperClassName="overflow-hidden block"
+            className="text-pretty break-words font-unbounded text-lg font-light leading-relaxed md:text-2xl"
             trigger={isInViewSectionAbout}
             delay={0.3}
             variants={{
@@ -541,77 +590,95 @@ const Page = ({ params: { locale } }: Props) => {
               },
             }}
           >
-            {`Hello, im Aditya Himawan, a dedicated Frontend Developer with a
-journey spanning two vibrant years in the dynamic realm of web
-development.`}
+            I&apos;m Aditya Himawan, a dedicated Frontend Developer with 2+
+            years of experience. I craft visually appealing and user-friendly
+            web interfaces. Music is one of my passions - it provides
+            inspiration for my creative process. My approach blends technical
+            expertise and artistic sensibility, resulting in clean, efficient
+            code and visually striking designs. I&apos;m always seeking new
+            challenges that push the boundaries of web development.
           </TextEffect>
         </div>
-        <NowPlaying />
+        <InView
+          variants={{
+            hidden: {
+              opacity: 0,
+              x: 50,
+            },
+            visible: {
+              opacity: 1,
+              x: 0,
+            },
+          }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          viewOptions={{ margin: '0px 0px -350px 0px' }}
+        >
+          <NowPlaying />
+        </InView>
       </section>
       <section
         id="skills"
         className="container min-h-[70vh] border-t border-neutral-200 dark:border-neutral-700"
       >
         <div className="py-20 " ref={refSectionSkills}>
-          <motion.h2
-            className="flex items-baseline py-10 text-2xl lg:text-4xl"
+          <InView
             variants={{
-              hidden: { opacity: 0, y: 20 },
-              show: {
+              hidden: {
+                opacity: 0,
+                y: 100,
+              },
+              visible: {
                 opacity: 1,
                 y: 0,
-                transition: {
-                  delay: 0.5,
-                },
               },
             }}
-            animate={isInViewSectionSkills ? 'show' : 'hidden'}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            viewOptions={{ margin: '0px 0px -150px 0px' }}
           >
-            SKILLS
-            <AudioLines className="ml-2 h-6 w-6 text-secondary" />
-          </motion.h2>
-          <motion.ul
-            className="text-2xl"
+            <h2 className="flex items-center py-10 font-unbounded text-2xl lg:text-4xl">
+              SKILLS
+              <AudioLines className="ml-2 h-6 w-6 text-secondary" />
+            </h2>
+          </InView>
+          <InView
+            viewOptions={{ once: false, margin: '0px 0px -50px 0px' }}
             variants={{
-              hidden: { opacity: 0 },
-              show: {
+              hidden: {
+                opacity: 0,
+              },
+              visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.25,
-                  delayChildren: 0.5,
-                  delay: 0.5,
+                  staggerChildren: 0.5,
                 },
               },
             }}
-            initial="hidden"
-            animate={isInViewSectionSkills ? 'show' : 'hidden'}
           >
-            <SkillItem
-              category="Languages"
-              skills="HTML • CSS • JavaScript • TypeScript • Go • Swift"
-              imgSrc="https://i.gifer.com/origin/2b/2b604178397000ee589a86d3e9e10b5a_w200.gif"
-            />
-            <SkillItem
-              category="Frameworks"
-              skills="React • Next • Remix • TailwindCSS"
-              imgSrc="https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg"
-            />
-            <SkillItem
-              category="Animations"
-              skills="Framer Motion • Lottie • GSAP"
-              imgSrc="https://camo.githubusercontent.com/02bc2b08d9850c146f2d8e6f09dc971bce7f65dcfc45fa87f9d9e8c244bac28e/68747470733a2f2f6672616d657275736572636f6e74656e742e636f6d2f696d616765732f704d534f6d47503256387353615a525632443769344854425465342e706e67"
-            />
-            <SkillItem
-              category="Design & Tools"
-              skills="Figma • VSCode • Git"
-              imgSrc="https://cdn.sanity.io/images/599r6htc/regionalized/9cd9e0e6b2c322b439633e76e1b7e6fd6c340824-1920x1080.png?rect=0,1,1920,1079&w=804&h=452&q=75&fit=max&auto=format"
-            />
-            <SkillItem
-              category="Project Management"
-              skills="Trello • Taiga"
-              imgSrc="https://images.ctfassets.net/rz1oowkt5gyp/4kCNudjaBYj90CGgG7Lict/cbafa67336b2007278f50d99ceabfb22/Boards_2x.png?w=540"
-            />
-          </motion.ul>
+            {dataSkills.map((item, index) => (
+              <motion.div
+                key={item.category}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    transition: {
+                      type: 'spring',
+                      duration: 0.5,
+                    },
+                  },
+                }}
+                className="text-lg"
+              >
+                <SkillItem
+                  category={item.category}
+                  skills={item.skills}
+                  imgSrc={item.imgSrc}
+                  index={index}
+                />
+              </motion.div>
+            ))}
+          </InView>
         </div>
       </section>
       <section id="experience" className="container w-full">
@@ -620,82 +687,85 @@ development.`}
       <section id="works" className="relative min-h-[70vh] overflow-x-clip">
         <div className="container pb-40 pt-80" ref={refSectionWorks}>
           <div className="border-t border-neutral-200 dark:border-neutral-700">
-            <motion.h2
-              className="flex items-baseline py-10 text-2xl lg:text-4xl"
+            <InView
               variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: {
+                hidden: {
+                  opacity: 0,
+                  x: -100,
+                },
+                visible: {
                   opacity: 1,
-                  y: 0,
+                  x: 0,
+                },
+              }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              viewOptions={{ margin: '0px 0px -350px 0px' }}
+            >
+              <h2 className="flex items-baseline py-10 font-unbounded text-2xl lg:text-4xl">
+                WORKS
+                <AudioLines className="ml-2 h-6 w-6 text-secondary" />
+              </h2>
+            </InView>
+            <InView
+              viewOptions={{ once: false, margin: '0px 0px -250px 0px' }}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                visible: {
+                  opacity: 1,
                   transition: {
-                    delay: 0.5,
+                    staggerChildren: 0.5,
                   },
                 },
               }}
-              animate={isInViewSectionWorks ? 'show' : 'hidden'}
             >
-              WORKS
-              <AudioLines className="ml-2 h-6 w-6 text-secondary" />
-            </motion.h2>
-            <motion.div
-              className="grid grid-cols-1 gap-4 md:grid-cols-2"
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.2,
-                    delay: 0.5,
-                  },
-                },
-              }}
-              initial="hidden"
-              animate={isInViewSectionWorks ? 'show' : 'hidden'}
-            >
-              {[1, 2, 3, 4].map((_, index) => (
-                <motion.div
-                  key={index}
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                    },
-                    show: {
-                      opacity: 1,
-                      transition: {
-                        type: 'spring',
-                        duration: 1 * index,
-                      },
-                    },
-                  }}
-                  className="relative flex h-[450px] w-full overflow-hidden rounded-lg transition-all"
-                >
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {[1, 2, 3, 4].map((_, index) => (
                   <motion.div
-                    className="relative h-[450px] w-full rounded-lg"
-                    whileHover={{
-                      scale: 1.1,
-                      transition: { duration: 0.3 },
+                    key={index}
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        scale: 1.2,
+                      },
+                      visible: {
+                        opacity: 1,
+                        scale: 1,
+                      },
                     }}
+                    transition={{ duration: 0.1, ease: 'easeInOut' }}
+                    className="relative flex h-[250px] w-full  overflow-hidden rounded-lg transition-all md:h-[400px] lg:h-[450px]"
                   >
-                    <Image
-                      src="https://assets.aceternity.com/features-section.png"
-                      alt="feature template"
-                      width={1000}
-                      height={1000}
-                      className="h-full w-full object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                    />
                     <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-black/50"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
+                      className="relative h-[250px] w-full rounded-lg md:h-[400px] lg:h-[450px]"
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.3 },
+                      }}
                     >
-                      <p className="text-2xl font-bold text-white">
-                        Project Title
-                      </p>
+                      <Image
+                        src="https://assets.aceternity.com/features-section.png"
+                        alt="feature template"
+                        width={1000}
+                        height={1000}
+                        className="h-full w-full object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+                      />
+                      <motion.div
+                        className="absolute inset-0 flex items-center justify-center bg-black/50"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        whileTap={{ opacity: 1 }}
+                      >
+                        <p className="text-2xl font-bold text-white">
+                          Project Title
+                        </p>
+                      </motion.div>
                     </motion.div>
                   </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
+                ))}
+              </div>
+            </InView>
           </div>
         </div>
         <div className="absolute -left-[50%] top-20 z-10 inline-flex h-40 w-[200%] flex-nowrap overflow-hidden">
@@ -724,13 +794,17 @@ development.`}
           </div>
         </div>
       </section>
-      <section id="link" className="relative bg-secondary">
+      <section id="contact" className="relative bg-secondary">
         <div className="grid place-content-center gap-2 px-8 py-24 text-black">
-          <FlipLink href="#">Github</FlipLink>
-          <FlipLink href="#">Spotify</FlipLink>
-          <FlipLink href="#">Twitter</FlipLink>
-          <FlipLink href="#">Linkedin</FlipLink>
-          <FlipLink href="#">Email • Me</FlipLink>
+          <FlipLink href="https://github.com/adityahimaone">Github</FlipLink>
+          <FlipLink href="https://open.spotify.com/user/212nmrqpklzmvpntgorzpavgq?si=2a79f73cbb334db6">
+            Spotify
+          </FlipLink>
+          <FlipLink href="https://x.com/adityahimaone">X</FlipLink>
+          <FlipLink href="https://linkedin.com/in/adityahimaone">
+            Linkedin
+          </FlipLink>
+          <FlipLink href={mailtoUrl}>Email • Me</FlipLink>
         </div>
       </section>
     </main>

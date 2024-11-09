@@ -28,7 +28,7 @@ const NowPlaying = () => {
 
   if (!data) {
     return (
-      <div className="h-24 w-72 animate-pulse">
+      <div className="h-24 w-60 animate-pulse">
         <div className="flex h-full items-center justify-center">
           <span className="text-gray-400">Loading...</span>
         </div>
@@ -38,7 +38,7 @@ const NowPlaying = () => {
 
   if (!data.isPlaying) {
     return (
-      <div className="h-24 w-72">
+      <div className="h-24 w-60">
         <div className="flex h-full items-center justify-center">
           <Music2 className="mr-2 h-6 w-6 text-gray-400" />
           <span className="text-gray-400">Not playing</span>
@@ -48,7 +48,7 @@ const NowPlaying = () => {
   }
 
   return (
-    <div className="relative w-72 overflow-clip rounded-lg bg-secondary drop-shadow-xl">
+    <div className="relative w-60 overflow-clip rounded-lg bg-secondary drop-shadow-xl">
       <div className="p-4">
         <div className="flex flex-col">
           <motion.div
@@ -92,16 +92,40 @@ const NowPlaying = () => {
             </motion.div>
           </motion.div>
           <div className="mt-2 flex items-center gap-2">
-            <FaSpotify className="h-12 w-12 text-black" title="Spotify" />
+            <FaSpotify
+              className="h-8 w-8 flex-none text-black"
+              title="Spotify"
+            />
             <div className="flex flex-col justify-start overflow-hidden">
-              <a
-                href={data.songUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="break-all text-lg font-semibold text-neutral-800 hover:underline"
-              >
-                {data.title}
-              </a>
+              <div className="overflow-hidden whitespace-nowrap">
+                <motion.div
+                  className="inline-flex gap-4"
+                  initial={{ x: '0%' }}
+                  animate={{ x: '-50%' }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                >
+                  <a
+                    href={data.songUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-semibold text-neutral-800 hover:underline"
+                  >
+                    {data.title}
+                  </a>
+                  <a
+                    href={data.songUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-semibold text-neutral-800 hover:underline"
+                  >
+                    {data.title}
+                  </a>
+                </motion.div>
+              </div>
               <p className="truncate text-base text-neutral-700">
                 {data.artist}
               </p>

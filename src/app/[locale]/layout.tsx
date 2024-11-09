@@ -6,7 +6,8 @@ import { notFound } from 'next/navigation';
 import PageTransitionEffect from './pageTransitionEffect';
 import Footer from '@/components/Footer';
 import Inner from '@/components/layouts/inner';
-import { poppins } from '@/lib/fonts';
+import { mochiy_pop_one, poppins, unbounded } from '@/lib/fonts';
+import { AnimatedTabs } from '@/components/AnimatedTabs';
 
 export const metadata: Metadata = {
   title: 'adit — frontend developer',
@@ -71,11 +72,16 @@ export default function RootLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <html lang={locale} suppressHydrationWarning>
-        <body className={poppins.className}>
+      <html
+        lang={locale}
+        suppressHydrationWarning
+        className={`${poppins.variable} ${mochiy_pop_one.variable} ${unbounded.variable}`}
+      >
+        <body className="font-poppins">
           <PageTransitionEffect>
             <Theme>
               <Inner>
+                <AnimatedTabs />
                 {children}
                 <Footer />
               </Inner>
