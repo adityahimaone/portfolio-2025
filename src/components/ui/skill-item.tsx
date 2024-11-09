@@ -42,9 +42,7 @@ const SkillItem = ({ category, skills, imgSrc, index }: SkillItemProps) => {
     >
       <div className="flex flex-col items-center justify-center py-8 lg:flex-row lg:items-center lg:justify-between">
         <motion.div className="bg-[#222222] p-1 lg:p-3">{category}</motion.div>
-        <motion.div className="relative z-10 break-all text-center">
-          {skills}
-        </motion.div>
+        <motion.div className="relative z-10 text-center">{skills}</motion.div>
         <motion.img
           style={{
             top,

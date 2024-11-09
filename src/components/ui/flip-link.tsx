@@ -13,6 +13,7 @@ const FlipLink = ({ children, href }: FlipLinkProps) => {
     <motion.a
       initial="initial"
       whileHover="hovered"
+      target="_blank"
       href={href}
       className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       style={{

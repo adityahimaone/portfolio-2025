@@ -25,8 +25,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-        mochi: ['Mochiy Pop One', 'sans-serif'],
+        poppins: ['var(--font-poppins)'],
+        mochi: ['var(--font-mochiy)'],
+        unbounded: ['var(--font-unbounded)'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -158,4 +159,3 @@ function addVariablesForColors({ addBase, theme }: any) {
     ':root': newVars,
   });
 }
-

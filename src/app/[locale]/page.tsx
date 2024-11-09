@@ -23,6 +23,8 @@ import { ArrowRight, AudioLines, Music2, Music3, Music4 } from 'lucide-react';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import SkillItem from '@/components/ui/skill-item';
 import { InView } from '@/components/motion-ui/in-view';
+import { TextScramble } from '@/components/motion-ui/text-scramble';
+import { useMobileViewport } from '@/lib/utils';
 
 interface Props {
   params: {
@@ -32,6 +34,8 @@ interface Props {
 
 const Page = ({ params: { locale } }: Props) => {
   const t = useTranslations('projects');
+
+  const isMobile = useMobileViewport();
 
   const refSectionHero = useRef<HTMLDivElement>(null);
   const refSectionAbout = useRef<HTMLDivElement>(null);
@@ -111,9 +115,11 @@ const Page = ({ params: { locale } }: Props) => {
       title: 'APR 2024 - SEP 2024',
       content: (
         <div>
-          <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
+          <h3 className="mb-1 text-2xl font-medium text-neutral-800 dark:text-neutral-200">
             Frontend Developer{' '}
-            <span className="text-lg text-neutral-400">Part Time</span>
+            <span className="text-base font-light text-neutral-400 md:text-lg">
+              Part Time
+            </span>
           </h3>
           <p className="mb-3 text-lg text-secondary">
             80&Company - Kyoto, Japan
@@ -167,20 +173,20 @@ const Page = ({ params: { locale } }: Props) => {
               interface and ensure a seamless user experience.
             </li>
           </ul>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <Image
               src="https://assets.aceternity.com/pro/hero-sections.png"
               alt="hero template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-40  w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <Image
               src="https://assets.aceternity.com/features-section.png"
               alt="feature template"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-40  w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -366,6 +372,8 @@ const Page = ({ params: { locale } }: Props) => {
     );
   };
 
+  const mailtoUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=adityahimaone@gmail.com&su=${encodeURIComponent('Collaboration Opportunity')}&body=${encodeURIComponent("Hi Aditya,\n\nI'm reaching out because I'm interested in collaborating with you. I'd love to discuss potential opportunities to work together.\n\nLooking forward to hearing from you.\n\nBest regards,")}`;
+
   return (
     <main className="py-3">
       <div className="relative w-full overflow-x-clip bg-background-2 bg-dot-black/[0.2] dark:bg-dot-white/[0.2]">
@@ -435,7 +443,7 @@ const Page = ({ params: { locale } }: Props) => {
                   per="char"
                   preset="fade"
                   as="h1"
-                  className="text-6xl leading-none md:text-8xl lg:text-9xl xl:text-[180px]"
+                  className="font-unbounded text-4xl capitalize leading-none md:text-7xl lg:text-8xl xl:text-[165px]"
                   trigger={isInViewSectionHero}
                 >
                   Code
@@ -445,7 +453,7 @@ const Page = ({ params: { locale } }: Props) => {
                     per="char"
                     preset="slide"
                     as="h1"
-                    className="text-6xl text-secondary md:text-8xl lg:text-9xl xl:text-[180px]"
+                    className="font-unbounded text-4xl capitalize text-secondary md:text-7xl lg:text-8xl xl:text-[165px]"
                     trigger={isInViewSectionHero}
                     delay={0.3}
                   >
@@ -454,7 +462,7 @@ const Page = ({ params: { locale } }: Props) => {
                   <TextEffect
                     per="char"
                     preset="fade"
-                    className="text-7xl text-secondary xl:text-[180px]"
+                    className="font-unbounded text-4xl text-secondary md:text-7xl lg:text-8xl xl:text-[165px]"
                     trigger={isInViewSectionHero}
                     delay={0.8}
                     variants={{
@@ -478,17 +486,19 @@ const Page = ({ params: { locale } }: Props) => {
             </div>
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 flex-none bg-secondary" />
-              JKT, IND
+              <TextScramble trigger={isInViewSectionHero} duration={2}>
+                JKT, IND
+              </TextScramble>
             </div>
-            <div className="absolute right-24 top-24 xl:right-10">
+            <div className="absolute right-12 top-10 transition-all md:top-24 xl:right-10">
               <SpinningText
-                radius={5}
-                fontSize={1.2}
+                radius={isMobile ? 5 : 6}
+                fontSize={isMobile ? 0.8 : 1.2}
                 className="font-medium leading-none"
               >
                 {`frontend • dynamic-ui • pixel-perfect • `}
               </SpinningText>
-              <Music4 className="-mt-5 h-10 w-10 text-white" />
+              <Music4 className="-mt-3 h-7 w-7 text-white md:-mt-5 md:h-10 md:w-10" />
             </div>
             <div className="">
               <div className="absolute -bottom-10 -left-[50%] z-10 inline-flex h-20 w-[200%] flex-nowrap overflow-hidden bg-[#222222] shadow-lg">
@@ -538,17 +548,23 @@ const Page = ({ params: { locale } }: Props) => {
       </div>
       <section
         id="about"
-        className="container mb-32 mt-60 flex h-full flex-col gap-5 overflow-hidden lg:flex-row lg:items-center lg:justify-between"
+        className="container mb-32 mt-60 flex h-full flex-col gap-8 overflow-hidden lg:flex-row lg:items-center lg:justify-between"
       >
         <div
           ref={refSectionAbout}
           className="mx-auto flex max-w-screen-2xl flex-col items-start justify-center"
         >
-          <p className="mb-5 bg-[#222222] p-3 text-lg">@adityahimaone</p>
+          <TextScramble
+            className="mb-5 bg-[#222222] p-3 text-lg"
+            trigger={isInViewSectionAbout}
+            duration={1}
+          >
+            @adityahimaone
+          </TextScramble>
           <TextEffect
             per="line"
             as="p"
-            className="text-pretty break-words text-lg leading-relaxed md:text-2xl"
+            className="text-pretty break-words font-unbounded text-lg font-light leading-relaxed md:text-2xl"
             trigger={isInViewSectionAbout}
             delay={0.3}
             variants={{
@@ -574,13 +590,13 @@ const Page = ({ params: { locale } }: Props) => {
               },
             }}
           >
-            I&apos;m Aditya Himawan, a dedicated Frontend Developer with 2 years
-            of experience. I craft visually appealing and user-friendly web
-            interfaces. Music is one of my passions - it provides inspiration
-            for my creative process. My approach blends technical expertise and
-            artistic sensibility, resulting in clean, efficient code and
-            visually striking designs. I&apos;m always seeking new challenges
-            that push the boundaries of web development.
+            I&apos;m Aditya Himawan, a dedicated Frontend Developer with 2+
+            years of experience. I craft visually appealing and user-friendly
+            web interfaces. Music is one of my passions - it provides
+            inspiration for my creative process. My approach blends technical
+            expertise and artistic sensibility, resulting in clean, efficient
+            code and visually striking designs. I&apos;m always seeking new
+            challenges that push the boundaries of web development.
           </TextEffect>
         </div>
         <InView
@@ -619,7 +635,7 @@ const Page = ({ params: { locale } }: Props) => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             viewOptions={{ margin: '0px 0px -150px 0px' }}
           >
-            <h2 className="flex items-center py-10 text-2xl lg:text-4xl">
+            <h2 className="flex items-center py-10 font-unbounded text-2xl lg:text-4xl">
               SKILLS
               <AudioLines className="ml-2 h-6 w-6 text-secondary" />
             </h2>
@@ -685,7 +701,7 @@ const Page = ({ params: { locale } }: Props) => {
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               viewOptions={{ margin: '0px 0px -350px 0px' }}
             >
-              <h2 className="flex items-baseline py-10 text-2xl lg:text-4xl">
+              <h2 className="flex items-baseline py-10 font-unbounded text-2xl lg:text-4xl">
                 WORKS
                 <AudioLines className="ml-2 h-6 w-6 text-secondary" />
               </h2>
@@ -739,6 +755,7 @@ const Page = ({ params: { locale } }: Props) => {
                         className="absolute inset-0 flex items-center justify-center bg-black/50"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
+                        whileTap={{ opacity: 1 }}
                       >
                         <p className="text-2xl font-bold text-white">
                           Project Title
@@ -779,11 +796,15 @@ const Page = ({ params: { locale } }: Props) => {
       </section>
       <section id="contact" className="relative bg-secondary">
         <div className="grid place-content-center gap-2 px-8 py-24 text-black">
-          <FlipLink href="#">Github</FlipLink>
-          <FlipLink href="#">Spotify</FlipLink>
-          <FlipLink href="#">Twitter</FlipLink>
-          <FlipLink href="#">Linkedin</FlipLink>
-          <FlipLink href="#">Email • Me</FlipLink>
+          <FlipLink href="https://github.com/adityahimaone">Github</FlipLink>
+          <FlipLink href="https://open.spotify.com/user/212nmrqpklzmvpntgorzpavgq?si=2a79f73cbb334db6">
+            Spotify
+          </FlipLink>
+          <FlipLink href="https://x.com/adityahimaone">X</FlipLink>
+          <FlipLink href="https://linkedin.com/in/adityahimaone">
+            Linkedin
+          </FlipLink>
+          <FlipLink href={mailtoUrl}>Email • Me</FlipLink>
         </div>
       </section>
     </main>
