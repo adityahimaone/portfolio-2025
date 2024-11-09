@@ -54,7 +54,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           transition={{ duration: 0.3, ease: 'easeInOut' }}
           viewOptions={{ margin: '0px 0px -150px 0px' }}
         >
-          <h2 className="flex items-baseline py-10 font-unbounded text-2xl lg:text-4xl">
+          <h2 className="flex items-center py-10 font-unbounded text-2xl lg:text-4xl">
             TIMELINE EXPERIENCES
             <AudioLines className="ml-2 h-6 w-6 flex-none text-secondary" />
           </h2>

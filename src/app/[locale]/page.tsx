@@ -25,6 +25,7 @@ import SkillItem from '@/components/ui/skill-item';
 import { InView } from '@/components/motion-ui/in-view';
 import { TextScramble } from '@/components/motion-ui/text-scramble';
 import { useMobileViewport } from '@/lib/utils';
+import { BorderTrail } from '@/components/motion-ui/border-trail';
 
 interface Props {
   params: {
@@ -115,8 +116,8 @@ const Page = ({ params: { locale } }: Props) => {
       title: 'APR 2024 - SEP 2024',
       content: (
         <div>
-          <h3 className="mb-1 text-2xl font-medium text-neutral-800 dark:text-neutral-200">
-            Frontend Developer{' '}
+          <h3 className="mb-1 flex flex-col text-2xl font-medium text-neutral-800 dark:text-neutral-200 md:flex-row md:items-baseline md:gap-2">
+            Frontend Developer
             <span className="text-base font-light text-neutral-400 md:text-lg">
               Part Time
             </span>
@@ -149,8 +150,8 @@ const Page = ({ params: { locale } }: Props) => {
       title: 'OCT 2022 - PRESENT',
       content: (
         <div>
-          <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
-            Frontend Developer{' '}
+          <h3 className="mb-1 text-2xl font-medium text-neutral-800 dark:text-neutral-200">
+            Frontend Developer
           </h3>
           <p className="mb-3 text-lg text-secondary">
             Fast 8 People Hub - Jakarta, Indonesia
@@ -158,35 +159,36 @@ const Page = ({ params: { locale } }: Props) => {
           <ul className="mb-3 space-y-3">
             <li className="inline-flex items-start gap-2">
               <div className="mt-2 h-2 w-2 flex-none bg-secondary" />
-              Spearheaded the development of a next-generation Human Resources
-              Management System incorporating blockchain technology to ensure
-              enhanced data security and decentralization.
+              Led the development of &ldquo;Bisadaya&rdquo; job-seeking platform
+              serving thousands of users, leveraging Next.js 14 for optimal
+              performance and SEO
             </li>
             <li className="inline-flex items-start gap-2">
               <div className="mt-2 h-2 w-2 flex-none bg-secondary" />
-              Also responsible for maintaining the application, resolving
-              critical bugs to improve system reliability and user experience
+              Architected and implemented an automated KPI tracking system
+              featuring customizable forms and interactive dashboards using
+              jQuery
             </li>
             <li className="inline-flex items-start gap-2">
               <div className="mt-2 h-2 w-2 flex-none bg-secondary" />
-              Collaborated with the design team to create a user-friendly
-              interface and ensure a seamless user experience.
+              Executed critical maintenance tasks and bug fixes across legacy
+              and modern codebases
             </li>
           </ul>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
             <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
+              src="https://res.cloudinary.com/deselamak/image/upload/v1731132621/portofolio/apdn2mnbqe6rzx3l4mln.png"
               alt="hero template"
               width={500}
               height={500}
-              className="h-40  w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-40 w-full rounded-lg object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <Image
-              src="https://assets.aceternity.com/features-section.png"
+              src="https://res.cloudinary.com/deselamak/image/upload/v1731132621/portofolio/t4hgjdbtgsojhtnhowy3.png"
               alt="feature template"
               width={500}
               height={500}
-              className="h-40  w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-40 w-full rounded-lg object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
           </div>
         </div>
@@ -196,8 +198,8 @@ const Page = ({ params: { locale } }: Props) => {
       title: 'JUN 2022 - AUG 2024',
       content: (
         <div>
-          <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
-            Frontend Developer{' '}
+          <h3 className="mb-1 text-2xl font-medium text-neutral-800 dark:text-neutral-200">
+            Frontend Developer
           </h3>
           <p className="mb-3 text-lg text-secondary">
             Unzypsoft - Jakarta, Indonesia
@@ -205,19 +207,20 @@ const Page = ({ params: { locale } }: Props) => {
           <ul className="space-y-3">
             <li className="inline-flex items-start gap-2">
               <div className="mt-2 h-2 w-2 flex-none bg-secondary" />
-              Spearheaded the development of a next-generation Human Resources
-              Management System incorporating blockchain technology to ensure
-              enhanced data security and decentralization.
+              Collaborated on BSN e-commerce platform frontend using ReactJS,
+              working across teams to deliver enhanced shopping experiences and
+              drive customer engagement
             </li>
             <li className="inline-flex items-start gap-2">
               <div className="mt-2 h-2 w-2 flex-none bg-secondary" />
-              Also responsible for maintaining the application, resolving
-              critical bugs to improve system reliability and user experience
+              Developed a dynamic NFT protocol interface with ReactJS and
+              Tailwind CSS, creating reusable components that boosted
+              development efficiency
             </li>
             <li className="inline-flex items-start gap-2">
               <div className="mt-2 h-2 w-2 flex-none bg-secondary" />
-              Collaborated with the design team to create a user-friendly
-              interface and ensure a seamless user experience.
+              Executed critical maintenance tasks and bug fixes across legacy
+              and modern codebases
             </li>
           </ul>
         </div>
@@ -234,9 +237,11 @@ const Page = ({ params: { locale } }: Props) => {
       content: (
         <div className="flex flex-col gap-3">
           <div>
-            <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
-              Frontend Developer{' '}
-              <span className="text-neutral-400">FEB 2022 - JUL 2022</span>
+            <h3 className="mb-1 flex flex-col text-2xl font-medium text-neutral-800 dark:text-neutral-200 md:flex-row md:items-baseline md:gap-2">
+              Frontend Developer
+              <span className="text-base font-light text-neutral-400 md:text-lg">
+                FEB 2022 - JUL 2022
+              </span>
             </h3>
             <p className="mb-3 text-lg text-secondary">
               Bootcamp Frontend Developer By Binar Academy
@@ -252,9 +257,11 @@ const Page = ({ params: { locale } }: Props) => {
             </ul>
           </div>
           <div>
-            <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
-              Fullstack Engineering{' '}
-              <span className="text-neutral-400">AUG 2021 - JAN 2022</span>
+            <h3 className="mb-1 flex flex-col text-2xl font-medium text-neutral-800 dark:text-neutral-200 md:flex-row md:items-baseline md:gap-2">
+              Fullstack Engineering
+              <span className="text-base font-light text-neutral-400 md:text-lg">
+                AUG 2021 - JAN 2022
+              </span>
             </h3>
             <p className="mb-3 text-lg text-secondary">
               Bootcamp Frontend Developer By Alterra Academy
@@ -269,27 +276,29 @@ const Page = ({ params: { locale } }: Props) => {
                 functionalities.
               </li>
             </ul>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
               <Image
                 src="https://assets.aceternity.com/pro/hero-sections.png"
                 alt="hero template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-40 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
               />
               <Image
                 src="https://assets.aceternity.com/features-section.png"
                 alt="feature template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-40 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
               />
             </div>
           </div>
           <div>
-            <h3 className="mb-1 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-2xl">
+            <h3 className="mb-1 flex flex-col text-2xl font-medium text-neutral-800 dark:text-neutral-200 md:flex-row md:items-baseline md:gap-2">
               Cloud Computing
-              <span className="text-neutral-400">FEB 2021 - JUL 2021</span>
+              <span className="text-base font-light text-neutral-400 md:text-lg">
+                FEB 2021 - JUL 2021
+              </span>
             </h3>
             <p className="mb-3 text-lg text-secondary">
               Bangkit Academy By Google, Tokopedia, Gojek, & Traveloka
@@ -319,7 +328,7 @@ const Page = ({ params: { locale } }: Props) => {
     },
     {
       category: 'Frameworks',
-      skills: 'React • Next • Remix • TailwindCSS',
+      skills: 'React • Next • jQuery • Remix • TailwindCSS',
       imgSrc:
         'https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg',
     },
@@ -410,7 +419,7 @@ const Page = ({ params: { locale } }: Props) => {
                     </div>
                   </Cursor>
                   <motion.a
-                    href="#"
+                    href="https://drive.google.com/file/d/19UZckHIwgl-6nRHTgci-Iw3JiEuZnlbq/view"
                     target="_blank"
                     variants={{
                       hidden: { x: -100, opacity: 0 },
@@ -563,8 +572,8 @@ const Page = ({ params: { locale } }: Props) => {
           </TextScramble>
           <TextEffect
             per="line"
-            as="p"
-            className="text-pretty break-words font-unbounded text-lg font-light leading-relaxed md:text-2xl"
+            as="h4"
+            className="text-pretty break-words font-unbounded text-base font-light leading-relaxed md:text-2xl"
             trigger={isInViewSectionAbout}
             delay={0.3}
             variants={{
@@ -590,14 +599,39 @@ const Page = ({ params: { locale } }: Props) => {
               },
             }}
           >
-            I&apos;m Aditya Himawan, a dedicated Frontend Developer with 2+
-            years of experience. I craft visually appealing and user-friendly
-            web interfaces. Music is one of my passions - it provides
-            inspiration for my creative process. My approach blends technical
-            expertise and artistic sensibility, resulting in clean, efficient
-            code and visually striking designs. I&apos;m always seeking new
-            challenges that push the boundaries of web development.
+            Frontend Developer who finds rhythm in both code and music. With 2+
+            years of crafting user interfaces, I transform creative inspiration
+            into clean, efficient web experiences. Driven by the perfect harmony
+            of technical precision and artistic design.
           </TextEffect>
+          <InView
+            variants={{
+              hidden: {
+                opacity: 0,
+                x: 50,
+              },
+              visible: {
+                opacity: 1,
+                x: 0,
+              },
+            }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            viewOptions={{ once: true, margin: '0px 0px -50px 0px' }}
+          >
+            <motion.div className="relative mt-4 flex bg-[#222222]/80 p-3 ">
+              <TextEffect
+                per="word"
+                as="h5"
+                trigger={isInViewSectionAbout}
+                preset="blur"
+                className="text-sm md:text-base"
+                delay={1}
+              >
+                &quot;Code Virtuoso - Where technical precision meets creative
+                harmony in web development&quot;
+              </TextEffect>
+            </motion.div>
+          </InView>
         </div>
         <InView
           variants={{
@@ -721,9 +755,9 @@ const Page = ({ params: { locale } }: Props) => {
               }}
             >
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {[1, 2, 3, 4].map((_, index) => (
+                {projectsData.map((item, index) => (
                   <motion.div
-                    key={index}
+                    key={item.id}
                     variants={{
                       hidden: {
                         opacity: 0,
@@ -745,7 +779,7 @@ const Page = ({ params: { locale } }: Props) => {
                       }}
                     >
                       <Image
-                        src="https://assets.aceternity.com/features-section.png"
+                        src={item.image}
                         alt="feature template"
                         width={1000}
                         height={1000}
@@ -758,7 +792,7 @@ const Page = ({ params: { locale } }: Props) => {
                         whileTap={{ opacity: 1 }}
                       >
                         <p className="text-2xl font-bold text-white">
-                          Project Title
+                          {item.title}
                         </p>
                       </motion.div>
                     </motion.div>
