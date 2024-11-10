@@ -599,6 +599,7 @@ const Page = ({ params: { locale } }: Props) => {
                           bounce: 0,
                           duration: Infinity,
                           repeat: Infinity,
+                          staggerChildren: 0.05,
                         },
                       },
                     },
