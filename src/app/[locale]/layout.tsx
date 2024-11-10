@@ -81,7 +81,6 @@ export default function RootLayout({
           <PageTransitionEffect>
             <Theme>
               <Inner>
-                <AnimatedTabs />
                 {children}
                 <Footer />
               </Inner>

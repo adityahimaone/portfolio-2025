@@ -88,6 +88,24 @@ export const projectsData: IProjectData[] = [
       'https://res.cloudinary.com/deselamak/image/upload/v1699777135/portofolio/mqprcb6todunicq4cg0a.webp',
     url: 'https://labgrownbeasts.com/',
   },
+  {
+    id: 5,
+    title: 'Gold Apple Token',
+    description:
+      'Explore the Labgrownbeasts Company Profile, showcasing innovation and excellence in the field. Learn about our vision, mission, and the cutting-edge work we do.',
+    image:
+      'https://res.cloudinary.com/deselamak/image/upload/v1731218154/portofolio/btj1gqvxgej1cgbqm6zf.png',
+    url: 'https://labgrownbeasts.com/',
+  },
+  {
+    id: 6,
+    title: 'Daily Calories Apps',
+    description:
+      'Explore the Labgrownbeasts Company Profile, showcasing innovation and excellence in the field. Learn about our vision, mission, and the cutting-edge work we do.',
+    image:
+      'https://res.cloudinary.com/deselamak/image/upload/v1731218151/portofolio/irby71t9knqrf3y5jogn.png',
+    url: 'https://labgrownbeasts.com/',
+  },
 ];
 
 export const selectedReposList: String[] = [
