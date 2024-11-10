@@ -3,37 +3,43 @@
 import { BackpackIcon, Home, PhoneCall, Settings, User } from 'lucide-react';
 import AnimatedBackground from './motion-ui/animated-background';
 import Link from 'next/link';
-import { FaTimeline } from 'react-icons/fa6';
+import { FaBriefcase, FaCode } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { MdOutlineTimeline } from 'react-icons/md';
+import { IoBriefcaseOutline } from 'react-icons/io5';
 
-export function AnimatedTabs() {
+interface AnimatedTabsProps {
+  activeSection: string;
+}
+
+export function AnimatedTabs({ activeSection }: AnimatedTabsProps) {
   const [showTabs, setShowTabs] = useState(false);
 
   const TABS = [
     {
-      label: 'Home',
+      label: 'home',
       icon: <Home className="h-5 w-5" />,
       href: '#hero',
     },
     {
-      label: 'About',
+      label: 'about',
       icon: <User className="h-5 w-5" />,
       href: '#about',
     },
     {
       label: 'skills',
-      icon: <FaTimeline className="h-5 w-5" />,
+      icon: <FaCode className="h-5 w-5" />,
       href: '#skills',
     },
     {
-      label: 'timeline',
-      icon: <FaTimeline className="h-5 w-5" />,
+      label: 'experience',
+      icon: <MdOutlineTimeline className="h-5 w-5" />,
       href: '#experience',
     },
     {
       label: 'works',
-      icon: <BackpackIcon className="h-5 w-5" />,
+      icon: <IoBriefcaseOutline className="h-5 w-5" />,
       href: '#works',
     },
     {
@@ -43,21 +49,31 @@ export function AnimatedTabs() {
     },
   ];
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 200) {
+  //       setShowTabs(true);
+  //     } else {
+  //       setShowTabs(false);
+  //     }
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setShowTabs(true);
-      } else {
-        setShowTabs(false);
-      }
+      setShowTabs(window.scrollY > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  console.log(activeSection, showTabs);
 
   return (
     <motion.div
@@ -69,7 +85,7 @@ export function AnimatedTabs() {
       <div className="flex justify-center md:hidden">
         <div className="flex w-fit space-x-2 rounded-xl border border-zinc-950/10 bg-neutral-900 p-2">
           <AnimatedBackground
-            defaultValue={TABS[0].label}
+            defaultValue={activeSection}
             className="rounded-lg bg-zinc-950"
             transition={{
               type: 'spring',
@@ -81,8 +97,7 @@ export function AnimatedTabs() {
               <Link
                 href={tab.href}
                 key={tab.label}
-                data-id={tab.label}
-                type="button"
+                data-id={tab.label.toLowerCase()}
                 className="inline-flex h-9 w-9 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-secondary"
               >
                 {tab.icon}
