@@ -225,7 +225,7 @@ const Page = ({ params: { locale } }: Props) => {
               and modern codebases
             </li>
           </ul>
-          <div className="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-2 grid hidden grid-cols-1 gap-4 md:grid-cols-2">
             <Image
               src="https://res.cloudinary.com/deselamak/image/upload/v1731132621/portofolio/apdn2mnbqe6rzx3l4mln.png"
               alt="hero template"
