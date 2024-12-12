@@ -5,7 +5,7 @@ import {
   useTransform,
   motion,
 } from 'framer-motion';
-import { AudioLines } from 'lucide-react';
+import { AudioLines, Disc3 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { InView } from '../motion-ui/in-view';
 
@@ -68,7 +68,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           >
             <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
               <div className="absolute left-2 flex h-8 w-8 items-center  justify-center rounded-full bg-white dark:bg-black md:left-3 md:h-10 md:w-10">
-                <div className="h-3 w-3 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800 md:h-4 md:w-4" />
+                {/* <div className="h-3 w-3 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800 md:h-4 md:w-4" /> */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 2, ease: 'linear' }}
+                >
+                  <Disc3 className="h-4 w-4 text-neutral-500 dark:text-neutral-500 md:h-6 md:w-6" />
+                </motion.div>
               </div>
               <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-neutral-500 md:block md:pl-20 md:text-5xl ">
                 {item.title}
@@ -93,7 +99,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] rounded-full bg-gradient-to-t from-purple-500 from-[0%] via-secondary via-[10%] to-transparent"
+            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-purple-500 from-[0%] via-secondary via-[10%] to-transparent"
           />
         </div>
       </div>
